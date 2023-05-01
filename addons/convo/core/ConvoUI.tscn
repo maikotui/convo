@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/convo/core/convo_ui.gd" id="1_my701"]
 
-[node name="ConvoUI" type="Control"]
+[node name="ConvoUI" type="Control" node_paths=PackedStringArray("popup_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,12 +12,23 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_my701")
+popup_menu = NodePath("PopupMenu")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+size = Vector2i(141, 100)
+item_count = 2
+item_0/text = "Text Node"
+item_0/id = 0
+item_1/text = "Choice Node"
+item_1/id = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -40,3 +51,4 @@ size_flags_vertical = 3
 right_disconnects = true
 
 [connection signal="pressed" from="MarginContainer/VSplitContainer/Toolbox/CreateButton" to="." method="_on_create_button_pressed"]
+[connection signal="gui_input" from="MarginContainer/VSplitContainer/GraphEdit" to="." method="_on_graph_edit_gui_input"]

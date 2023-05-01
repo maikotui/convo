@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bj77yet3dpjbi"]
+
+[ext_resource type="Script" path="res://addons/convo/nodes/text_node.gd" id="1_bwuvm"]
+
+[node name="TextNode" type="GraphNode"]
+offset_right = 350.0
+offset_bottom = 182.0
+title = "Text Node"
+show_close = true
+resizable = true
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+script = ExtResource("1_bwuvm")
+
+[node name="ActorInputArea" type="HSplitContainer" parent="."]
+layout_mode = 2
+split_offset = 50
+
+[node name="Label" type="Label" parent="ActorInputArea"]
+layout_mode = 2
+text = "Actor:"
+
+[node name="OptionButton" type="OptionButton" parent="ActorInputArea"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Tom"
+popup/item_0/id = 0
+popup/item_1/text = "Cathy"
+popup/item_1/id = 1
+
+[node name="TextInputArea" type="HSplitContainer" parent="."]
+layout_mode = 2
+split_offset = 50
+
+[node name="Label" type="Label" parent="TextInputArea"]
+layout_mode = 2
+text = "Text:"
+
+[node name="TextEdit" type="TextEdit" parent="TextInputArea"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
